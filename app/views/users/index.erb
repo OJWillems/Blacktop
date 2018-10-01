@@ -1,0 +1,5 @@
+<h1>Users Index</h1>
+<% @users.each do |user| %>
+  <%= link_to user.name, user %><br>
+  <%= button_to "Edit Your Profile", edit_user_path(user), method: :get %>
+<% end %>
