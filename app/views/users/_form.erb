@@ -1,13 +1,16 @@
-<%= form_for(@user) do |f|%>
+<%= form_for(@user_1) do |f|%>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :wins %>
-  <%= f.number_field :wins %>
-  <%= f.label :losses %>
-  <%= f.number_field :losses %>
+  <%= f.text_field :name %><br /><br />
   <%= f.label :smack_talk %>
-  <%= f.text_area :smack_talk %>
-  <%= f.label :budget %>
-  <%= f.number_field :budget %>
+  <%= f.text_area :smack_talk %><br /><br />
+<% end %>
+
+<h1>Player 2, create your team</h1>
+
+<%= form_for(@user_2) do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br /><br />
+  <%= f.label :smack_talk %>
+  <%= f.text_area :smack_talk %><br /><br />
   <%= f.submit %>
 <% end %>

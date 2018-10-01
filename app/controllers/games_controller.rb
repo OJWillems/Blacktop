@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
 
+  def welcome
+  end
+
   def index
     @games = Game.all
   end
@@ -13,8 +16,8 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params)
-    redirect_to @game
+    @game = Game.create(home_score: 0, away_score: 0, quarter_updates: "")
+    redirect_to new_user_path
   end
 
   def destroy

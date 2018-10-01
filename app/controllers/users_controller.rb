@@ -10,12 +10,14 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @user_1 = User.new
+    @user_2 = User.new
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to @user
+    @user_1 = User.create(user_params)
+    @user_2 = User.create(user_params)
+    redirect_to new_team_path
   end
 
   def edit

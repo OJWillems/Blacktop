@@ -10,25 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_144954) do
+ActiveRecord::Schema.define(version: 2018_10_01_202347) do
 
   create_table "games", force: :cascade do |t|
-    t.integer "home_score"
-    t.integer "away_score"
-    t.string "quarter_updates"
+    t.integer "home_score", default: 0
+    t.integer "away_score", default: 0
+    t.string "quarter_updates", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
-    t.string "team"
+    t.string "player_team"
     t.string "position"
     t.integer "overall_rating"
     t.integer "price"
     t.integer "ppg"
     t.integer "off_rating"
     t.integer "def_rating"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
     t.integer "user_id"
     t.integer "game_id"
     t.datetime "created_at", null: false
@@ -37,10 +43,10 @@ ActiveRecord::Schema.define(version: 2018_10_01_144954) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "wins"
-    t.integer "losses"
+    t.integer "wins", default: 0
+    t.integer "losses", default: 0
     t.string "smack_talk"
-    t.integer "budget"
+    t.integer "budget", default: 600
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
