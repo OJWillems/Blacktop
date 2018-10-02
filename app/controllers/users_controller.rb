@@ -15,8 +15,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user_1 = User.create(user_params)
-    @user_2 = User.create(user_params)
+    @user_1 = User.create(name: params[:name], wins: 0, losses: 0, smack_talk: params[:smack_talk], budget: 600)
+    @user_2 = User.create(name: params[:name], wins: 0, losses: 0, smack_talk: params[:smack_talk], budget: 600)
+
+    @team_1 = Team.create(user_id: @user_1.id, game_id: 1)
+    @team_2 = Team.create(user_id: @user_2.id, game_id: 1)
+    #test to see what this redirects to
     redirect_to new_team_path
   end
 

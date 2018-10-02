@@ -8,7 +8,12 @@ Game.create(home_score: 10, away_score: 20, quarter_updates: "It's the end of th
 Game.create(home_score: 30, away_score: 40, quarter_updates: "It's the end of the third quarter")
 Game.create(home_score: 45, away_score: 35, quarter_updates: "It's the end of the fourth quarter")
 
-Player.create(name: "LeBron James", player_team: "Los Angeles Lakers", position: "SF", overall_rating: 98, ppg: 28, off_rating: 99, def_rating: 97, price: 200, team_id: 1)
+Team.create(user_id: 1, game_id: 1)
+Team.create(user_id: 2, game_id: 2)
+Team.create(user_id: 3, game_id: 3)
+Team.create(user_id: 4, game_id: 4)
+
+Player.create(name: "LeBron James", player_team: "Los Angeles Lakers", position: "SF", overall_rating: 98, price: 200, ppg: 28, off_rating: 99, def_rating: 97, team_id: 1)
 Player.create(name: "Kevin Durant", player_team: "Golden State Warriors", position: "SF", overall_rating: 97, ppg: 28, off_rating: 99, def_rating: 90, price: 195, team_id: 1)
 Player.create(name: "James Harden", player_team: "Houston Rockets", position: "SG", overall_rating: 96, ppg: 28, off_rating: 99, def_rating: 88, price: 190, team_id: 1)
 Player.create(name: "Steph Curry", player_team: "Golden State Warriors", position: "PG", overall_rating: 95, ppg: 28, off_rating: 96, def_rating: 94, price: 185, team_id: 1)

@@ -1,0 +1,10 @@
+<h1>Let's draft!</h1>
+
+Player 1: <%= "remaing budget = " %><br /><br />
+Player 2: <%= "remaing budget = " %><br /><br />
+
+<%= render "form" %>
+
+<% @players.each do |player| %>
+  <%= player.name %><br />
+<% end %>
