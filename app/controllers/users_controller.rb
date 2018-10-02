@@ -10,13 +10,13 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user_1 = User.new
-    @user_2 = User.new
+    @user = User.new
   end
 
   def create
-    @user_1 = User.create(name: params[:name], wins: 0, losses: 0, smack_talk: params[:smack_talk], budget: 600)
-    @user_2 = User.create(name: params[:name], wins: 0, losses: 0, smack_talk: params[:smack_talk], budget: 600)
+
+    @user_1 = User.create(name: params[:user][:name], wins: 0, losses: 0, smack_talk: params[:user][:smack_talk], budget: 600)
+    @user_2 = User.create(name: params[:user][:wins], wins: 0, losses: 0, smack_talk: params[:user][:losses], budget: 600)
 
     @team_1 = Team.create(user_id: @user_1.id, game_id: 1)
     @team_2 = Team.create(user_id: @user_2.id, game_id: 1)

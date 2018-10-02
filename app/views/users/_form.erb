@@ -1,16 +1,13 @@
-<%= form_for(@user_1) do |f|%>
+<%= form_for(@user) do |f|%>
   <%= f.label :name %>
   <%= f.text_field :name %><br /><br />
   <%= f.label :smack_talk %>
   <%= f.text_area :smack_talk %><br /><br />
-<% end %>
 
-<h1>Player 2, create your team</h1>
-
-<%= form_for(@user_2) do |f|%>
   <%= f.label :name %>
-  <%= f.text_field :name %><br /><br />
+  <%= f.text_field :wins %><br /><br />
   <%= f.label :smack_talk %>
-  <%= f.text_area :smack_talk %><br /><br />
+  <%= f.text_area :losses %><br /><br />
   <%= f.submit %>
+
 <% end %>
