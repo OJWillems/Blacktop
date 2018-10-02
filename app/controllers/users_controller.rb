@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
   def create
 
-    @user_1 = User.create(name: params[:user][:name], wins: 0, losses: 0, smack_talk: params[:user][:smack_talk], budget: 600)
-    @user_2 = User.create(name: params[:user][:wins], wins: 0, losses: 0, smack_talk: params[:user][:losses], budget: 600)
+    @user_1 = User.create(name_1: params[:user][:name_1], wins: 0, losses: 0, smack_talk_1: params[:user][:smack_talk_1], budget: 600)
+    @user_2 = User.create(name_2: params[:user][:name_2], wins: 0, losses: 0, smack_talk_2: params[:user][:smack_talk_2], budget: 600)
 
     @team_1 = Team.create(user_id: @user_1.id, game_id: 1)
     @team_2 = Team.create(user_id: @user_2.id, game_id: 1)
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :wins, :losses, :smack_talk, :budget)
+    params.require(:user).permit(:name_1, :name_2, :wins, :losses, :smack_talk_1, :smack_talk_2, :budget)
   end
 
 end
