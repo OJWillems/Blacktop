@@ -1,7 +1,7 @@
-User.create(name: "Ollie", wins: 2, losses: 1, smack_talk: "Show me what you got", budget: 1000000)
-User.create(name: "Mike", wins: 4, losses: 1, smack_talk: "Your mom is overweight", budget: 1000000)
-User.create(name: "Evans", wins: 1, losses: 10, smack_talk: "It don't make no sense", budget: 1000000)
-User.create(name: "Brooke", wins: 100, losses: 0, smack_talk: "You call that a method?", budget: 1000000)
+User.create(wins: 2, losses: 3, budget: 60, name_1: "Ollie", name_2: "", smack_talk_1: "Show me what you got", smack_talk_2: "")
+User.create(wins: 2, losses: 3, budget: 60, name_1: "Ollie", name_2: "", smack_talk_1: "Show me what you got", smack_talk_2: "")
+User.create(wins: 2, losses: 3, budget: 60, name_1: "Ollie", name_2: "", smack_talk_1: "Show me what you got", smack_talk_2: "")
+User.create(wins: 2, losses: 3, budget: 60, name_1: "Ollie", name_2: "", smack_talk_1: "Show me what you got", smack_talk_2: "")
 
 Game.create(home_score: 0, away_score: 0, quarter_updates: "It's the end of the first quarter")
 Game.create(home_score: 10, away_score: 20, quarter_updates: "It's the end of the second quarter")

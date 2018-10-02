@@ -1,10 +1,7 @@
 <h1>Let's draft!</h1>
 
-<%= @user.name  %>
+<%= "#{@team_1.name_1}, It's your pick!" %>: <%= "remaing budget: #{@team_1.budget} " %><br /><br />
 
-<%= " It's your pick!" %>: <%= "remaing budget = " %><br /><br />
-<%= " It's your pick!" %>: <%= "remaing budget = " %><br /><br />
-
-# <% @players.each do |player| %>
-#   <%= player.name %><br />
-# <% end %>
+<% @players.each do |player| %>
+   <%= link_to "#{player.name}, $#{player.price}", new_team_path %><br />
+<% end %>
