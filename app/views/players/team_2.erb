@@ -16,6 +16,7 @@
    <%= link_to "#{player.name} | #{player.position} | $#{player.price}", player %><br />
 <% end %>
 
+<<<<<<< HEAD
 <div class="ui link cards">
   <div class="card">
     <div class="image">
@@ -516,3 +517,8 @@
     </div>
   </div>
 </div>
+=======
+<% if flash[:budget_error] %>
+  <%= button_to "Restart Game", new_game_path, method: :get %>
+<% end %>
+>>>>>>> e25c913f490d5db19259df0d5bba801984d5f507

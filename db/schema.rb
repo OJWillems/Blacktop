@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_202347) do
+ActiveRecord::Schema.define(version: 2018_10_03_210723) do
 
   create_table "games", force: :cascade do |t|
     t.integer "period_counter", default: 0
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_202347) do
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "points"
   end
 
   create_table "teams", force: :cascade do |t|
