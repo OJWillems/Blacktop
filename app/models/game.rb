@@ -69,8 +69,10 @@ class Game < ApplicationRecord
 
           if rand <= @probability_of_three
             @points = 3
+            @team_1_player.update(points: (@team_1_player.points + 3))
           else
             @points = 2
+            @team_1_player.update(points: (@team_1_player.points + 2))
           end
 
           @current_score = self.home_score
@@ -78,9 +80,13 @@ class Game < ApplicationRecord
 
           self.update(home_score: @new_score)
 
-          self.update(game_updates: "Wow, that was a great shot by #{@team_1_player.name}")
+          hits = ["We'll see #{@team_1_player.name} on Sports Center later!", "#{@team_1_player.name} goes for the dunk and straight up POSTERIZES #{@team_2_player.name}", "#{@team_1_player.name}, covered by #{@team_2_player.name}, steps back and nails the three!", "#{@team_1_player.name} goes for the layup and it's in!", "#{@team_2_player.name} tried to chase #{@team_1_player.name}, but there was no way he was going to catch him"]
+          self.update(game_updates: hits.sample)
+          # self.update(game_updates: "Wow, that was a great shot by #{@team_1_player.name}")
         else
-          self.update(game_updates: "Unfortunately, he hit nothing but air. That's a missed shot!")
+          misses = ["Oooohh, close one by #{@team_1_player.name}!", "#{@team_1_player.name} goes for the three aaaaand it hits the rim!", "#{@team_1_player.name} can't be happy with that shot.", "#{@team_1_player.name} had a wide open pass, why'd he take that?", "#{@team_2_player.name} swats it away. #{@team_1_player.name} never stood a chance."]
+          self.update(game_updates: misses.sample)
+          # self.update(game_updates: "Unfortunately, he hit nothing but air. That's a missed shot!")
         end
 
       else # this else belongs to the massive if above where it checks which team has possesion
@@ -115,8 +121,10 @@ class Game < ApplicationRecord
 
           if rand <= @probability_of_three
             @points = 3
+            @team_2_player.update(points: (@team_2_player.points + 3))
           else
             @points = 2
+            @team_2_player.update(points: (@team_2_player.points + 2))
           end
 
           @current_score = self.away_score
@@ -124,9 +132,13 @@ class Game < ApplicationRecord
 
           self.update(away_score: @new_score)
 
-          self.update(game_updates: "Wow, that was a great shot by #{@team_2_player.name}")
+          # self.update(game_updates: "Wow, that was a great shot by #{@team_2_player.name}")
+          hits = ["We'll see #{@team_2_player.name} on Sports Center later!", "#{@team_2_player.name} goes for the dunk and straight up POSTERIZES #{@team_1_player.name}", "#{@team_2_player.name}, covered by #{@team_1_player.name}, steps back and nails the three!", "#{@team_2_player.name} goes for the layup and it's in!", "#{@team_1_player.name} tried to chase #{@team_2_player.name}, but there was no way he was going to catch him"]
+          self.update(game_updates: hits.sample)
         else
-          self.update(game_updates: "Unfortunately, he hit nothing but air. That's a missed shot!")
+          misses = ["Oooohh, close one by #{@team_2_player.name}!", "#{@team_2_player.name} goes for the three aaaaand it hits the rim!", "#{@team_2_player.name} can't be happy with that shot.", "#{@team_2_player.name} had a wide open pass, why'd he take that?", "Reminds me of Shaq going for threes", "#{@team_2_player.name} swats it away. #{@team_1_player.name} never stood a chance."]
+          self.update(game_updates: misses.sample)
+          # self.update(game_updates: "Unfortunately, he hit nothing but air. That's a missed shot!")
         end
 
       end #end of massive if else statement

@@ -10,7 +10,7 @@ Last Play Update: <%= @game.game_updates %><br /><br />
 <ol>
 <% @players.each do |player| %>
   <% if player.team_id == @team_1.id %>
-      <li><%= player.name %></li>
+      <li><%= player.name %> | Points: <%= player.points %></li>
     <% end %>
 <% end %>
 </ol>
@@ -20,7 +20,7 @@ Last Play Update: <%= @game.game_updates %><br /><br />
 <ol>
 <% @players.each do |player| %>
   <% if player.team_id == @team_2.id %>
-      <li><%= player.name %></li>
+      <li><%= player.name %> | Points: <%= player.points %></li>
     <% end %>
 <% end %>
 </ol>

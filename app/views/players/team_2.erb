@@ -8,10 +8,14 @@
 
 <%= form_for @player, url: {action: 'update_player_2'}, html: {method: "patch"} do |f| %>
   <%= collection_select(:player, :name, @unpicked_players, :id, :name) %>
-  <% collection_select(:player, :team_id, @team, :id, :team_name) %>
+  <%= collection_select(:player, :team_id, @team, :id, :team_name) %>
   <%= f.submit "Draft Player" %>
 <% end %><br />
 
 <% @unpicked_players.each do |player| %>
    <%= link_to "#{player.name} | #{player.position} | $#{player.price}", player %><br />
+<% end %>
+
+<% if flash[:budget_error] %>
+  <%= button_to "Restart Game", new_game_path, method: :get %>
 <% end %>

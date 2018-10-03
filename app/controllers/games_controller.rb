@@ -28,6 +28,7 @@ class GamesController < ApplicationController
     @players = Player.all
     @players.each do |player|
       player.update(team_id: 3)
+      player.update(points: 0)
     end
     User.destroy_all
     redirect_to new_user_path
