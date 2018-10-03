@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 2018_10_01_202347) do
 
   create_table "games", force: :cascade do |t|
+    t.integer "period_counter", default: 0
     t.integer "home_score", default: 0
     t.integer "away_score", default: 0
-    t.string "quarter_updates", default: ""
+    t.string "game_updates", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

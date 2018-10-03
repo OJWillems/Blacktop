@@ -3,10 +3,10 @@ User.create(name_1: "Ollie", name_2: "", wins: 2, losses: 3, budget: 60, smack_t
 User.create(name_1: "Ollie", name_2: "", wins: 2, losses: 3, budget: 60, smack_talk_1: "Show me what you got", smack_talk_2: "")
 User.create(name_1: "Ollie", name_2: "", wins: 2, losses: 3, budget: 60, smack_talk_1: "Show me what you got", smack_talk_2: "")
 
-Game.create(home_score: 0, away_score: 0, quarter_updates: "It's the end of the first quarter")
-Game.create(home_score: 10, away_score: 20, quarter_updates: "It's the end of the second quarter")
-Game.create(home_score: 30, away_score: 40, quarter_updates: "It's the end of the third quarter")
-Game.create(home_score: 45, away_score: 35, quarter_updates: "It's the end of the fourth quarter")
+Game.create(period_counter: 0, home_score: 0, away_score: 0, game_updates: "It's the end of the first quarter")
+Game.create(period_counter: 0, home_score: 10, away_score: 20, game_updates: "It's the end of the second quarter")
+Game.create(period_counter: 0, home_score: 30, away_score: 40, game_updates: "It's the end of the third quarter")
+Game.create(period_counter: 0, home_score: 45, away_score: 35, game_updates: "It's the end of the fourth quarter")
 
 Team.create(team_name: "", user_id: 1, game_id: 1)
 Team.create(team_name: "", user_id: 2, game_id: 2)

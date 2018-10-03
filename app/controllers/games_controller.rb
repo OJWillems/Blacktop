@@ -11,8 +11,20 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  def update_game
+    @game = Game.all[-1]
+    @players = Player.all
+    @team_1 = Team.all[-2]
+    @team_2 = Team.all[-1]
+    @game.game_sequence
+    @current_period_count = @game.period_counter
+    @new_count = @current_period_count + 1
+    @game.update(period_counter: @new_count)
+    @game_count = @game.period_counter
+  end
+
   def create
-    @game = Game.create(home_score: 0, away_score: 0, quarter_updates: "")
+    @game = Game.create(period_counter: 0, home_score: 0, away_score: 0, game_updates: "")
     @players = Player.all
     @players.each do |player|
       player.update(team_id: 3)
@@ -23,7 +35,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.all[-1]
-    @game.update 
+    @game.update
     redirect_to
   end
 
@@ -36,7 +48,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:home_score, :away_score, :quarter_updates)
+    params.require(:game).permit(:period_counter, :home_score, :away_score, :game_updates)
   end
 
 end

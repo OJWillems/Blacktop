@@ -1,0 +1,49 @@
+<h1>Let the Game begin!</h1>
+
+<% @game.period_counter %>
+Home Score: <%= @game.home_score %><br /><br />
+Away Score: <%= @game.away_score %><br /><br />
+<% if @game.period_counter == 4 %>
+  That's the end of the first quarter folks!
+<% elsif @game.period_counter == 8 %>
+  That's the end of the second quarter folks!
+<% elsif @game.period_counter == 12 %>
+  That's the end of the third quarter folks!
+<% elsif @game.period_counter == 16 %>
+  That's the end of the game folks!
+<% else %>
+  Last Play Update: <%= @game.game_updates %>
+<% end %><br /><br />
+
+
+<%= @team_1.team_name %>:
+
+<ol>
+<% @players.each do |player| %>
+  <% if player.team_id == @team_1.id %>
+      <li><%= player.name %></li>
+    <% end %>
+<% end %>
+</ol>
+
+<%= @team_2.team_name %>:
+
+<ol>
+<% @players.each do |player| %>
+  <% if player.team_id == @team_2.id %>
+      <li><%= player.name %></li>
+    <% end %>
+<% end %>
+</ol><br /><br />
+
+<% if @game.period_counter == 4 %>
+  <%= button_to "Let's start the second quarter", '/games/update_game', method: :get %>
+<% elsif @game.period_counter == 8 %>
+  <%= button_to "Let's start the third quarter", '/games/update_game', method: :get %>
+<% elsif @game.period_counter == 12 %>
+  <%= button_to "Let's start the third quarter", '/games/update_game', method: :get %>
+<% elsif @game.period_counter == 16 %>
+  <%= button_to "Let's check out the end of the game stats", '/games/update_game', method: :get %>
+<% else %>
+  <%= button_to "Sim until next play update", '/games/update_game', method: :get %>
+<% end %>
