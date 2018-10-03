@@ -1,1 +1,23 @@
 <h1>Hey this is your team page</h1>
+
+<%= @team_1.team_name %>:
+
+<ol>
+<% @players.each do |player| %>
+  <% if player.team_id == @team_1.id %>
+      <li><%= player.name %></li>
+    <% end %>
+<% end %>
+</ol>
+
+<%= @team_2.team_name %>:
+
+<ol>
+<% @players.each do |player| %>
+  <% if player.team_id == @team_2.id %>
+      <li><%= player.name %></li>
+    <% end %>
+<% end %>
+</ol>
+
+<%= button_to "Click to start the game!", '/games', method: :get  %>

@@ -1,4 +1,32 @@
-<h1>Games Index</h1>
-<% @games.each do |game| %>
-  <%= link_to game.name, player %><br><br>
+<h1>Let the Game begin!</h1>
+
+Home Score: <%= @game.home_score %><br /><br />
+Away Score: <%= @game.away_score %><br /><br />
+Last Play Update: <%= @game.quarter_updates %><br /><br />
+
+
+<%= @team_1.team_name %>:
+
+<ol>
+<% @players.each do |player| %>
+  <% if player.team_id == @team_1.id %>
+      <li><%= player.name %></li>
+    <% end %>
 <% end %>
+</ol>
+
+<%= @team_2.team_name %>:
+
+<ol>
+<% @players.each do |player| %>
+  <% if player.team_id == @team_2.id %>
+      <li><%= player.name %></li>
+    <% end %>
+<% end %>
+</ol>
+
+...simming till next possesion
+
+<br /><br /><%= "Wow this player did that!" %><br /><br />
+
+<%= button_to "Click for next possesion", games_path, method: :get %>
