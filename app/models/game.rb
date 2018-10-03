@@ -5,52 +5,142 @@ class Game < ApplicationRecord
   # decide which team gets back first
     #could do a tip-off here which is 50/50 probability
 
-  def tip_off
+  def game_sequence
+
+    #set teams for reference
     @team_1 = Team.all[-2]
     @team_2 = Team.all[-1]
     @teams = [@team_1, @team_2]
-    @teams.sample
-  end
 
-  def game_sequence(tip_off)
-    @possesion = tip_off
+    #random sample for who starts with possesion
+    #can adjust later if there is time
+    @possesion = @teams.sample
 
-    #set teams for reference
-
-    #sort players by overall rating
-    @team_1_players_sort = Team.all[-2].players.sort_by do |player|
-      player.overall_rating
-    end.reverse
+    13.times do
 
     #sort players by overall rating
-    @team_2_players_sort = Team.all[-1].players.sort_by do |player|
-      player.overall_rating
-    end.reverse
+      @team_1_players = Team.all[-2].players.sort_by do |player|
+        player.overall_rating
+      end.reverse
 
-    #player 1 players
-    @team_1_players = @team_1_players_sort.map do |player|
-      player.name
-    end
+      #sort players by overall rating
+      @team_2_players = Team.all[-1].players.sort_by do |player|
+        player.overall_rating
+      end.reverse
 
-    #player 2 players
-    @team_2_players = @team_2_players_sort.map do |player|
-      player.name
-    end
+      #order team 1 players by overall rating
+      #for now it is now weighted but need to come back to this!
+      @team_1_player = @team_1_players.sample
 
-    #order team 1 players by overall rating
-    #for now it is now weighted but need to come back to this!
-    @team_1_player = @team_1_players.sample
+      #order team 2 players by overall rating
+      #for now it is now weighted but need to come back to this!
+      @team_2_player = @team_2_players.sample
 
-    #order team 2 players by overall rating
-    #for now it is now weighted but need to come back to this!
-    @team_2_player = @team_2_players.sample
+      #see who is on offense or defense
+      if @possesion == @team_1
+        #set probability of scoring
+        if @team_1_player.off_rating > 95
+          @score_probability = 0.60
+        elsif @team_1_player.off_rating >= 90 && @team_1_player.off_rating <= 95
+          @score_probability = 0.50
+        elsif @team_1_player.off_rating < 90
+          @score_probability = 0.40
+        end
+        # set decrease in scoring probability from the defender
+        if @team_2_player.def_rating > 95
+          @score_probability -= 0.15
+        elsif @team_2_player.def_rating >= 90 && @team_2_player.def_rating <= 95
+          @score_probability -= 0.10
+        elsif @team_2_player.def_rating < 90
+          @score_probability -= 0.05
+        end
 
-    #see who is on offense or defense
+        #check to see if shot hits
+        if rand <= @score_probability
+          @shot_score = true
+        else
+          @shot_score = false
+        end
 
-    #select offensive player for shot
-    @team_1_players
+        #update the database based on the score
+        if @shot_score
+          #was it a 2-pointer or a three
+          @probability_of_three = 0.15
 
-  end
+          if rand <= @probability_of_three
+            @points = 3
+          else
+            @points = 2
+          end
+
+          @current_score = self.home_score
+          @new_score = @current_score + @points
+
+          self.update(home_score: @new_score)
+
+          self.update(game_updates: "Wow, that was a great shot by #{@team_1_player.name}")
+        else
+          self.update(game_updates: "Unfortunately, he hit nothing but air. That's a missed shot!")
+        end
+
+      else # this else belongs to the massive if above where it checks which team has possesion
+
+        if @team_2_player.off_rating > 95
+          @score_probability = 0.60
+        elsif @team_2_player.off_rating >= 90 && @team_2_player.off_rating <= 95
+          @score_probability = 0.50
+        elsif @team_2_player.off_rating < 90
+          @score_probability = 0.40
+        end
+        # set decrease in scoring probability from the defender
+        if @team_1_player.def_rating > 95
+          @score_probability -= 0.15
+        elsif @team_1_player.def_rating >= 90 && @team_1_player.def_rating <= 95
+          @score_probability -= 0.10
+        elsif @team_1_player.def_rating < 90
+          @score_probability -= 0.05
+        end
+
+        #check to see if shot hits
+        if rand <= @score_probability
+          @shot_score = true
+        else
+          @shot_score = false
+        end
+
+        #update the database based on the score
+        if @shot_score
+          #was it a 2-pointer or a three
+          @probability_of_three = 0.15
+
+          if rand <= @probability_of_three
+            @points = 3
+          else
+            @points = 2
+          end
+
+          @current_score = self.away_score
+          @new_score = @current_score + @points
+
+          self.update(away_score: @new_score)
+
+          self.update(game_updates: "Wow, that was a great shot by #{@team_2_player.name}")
+        else
+          self.update(game_updates: "Unfortunately, he hit nothing but air. That's a missed shot!")
+        end
+
+      end #end of massive if else statement
+
+      #changing possesions
+      if @possesion == @team_1
+        @possesion = @team_2
+      else
+        @possesion = @team_1
+      end
+
+    end #end of loop
+
+  end #end of game sequence method
 
   #how each possesion work
     #choosing which offensive player will have the ball

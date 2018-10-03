@@ -1,8 +1,0 @@
-<h1>Let's draft!</h1>
-
-<%= "#{@team_1.name_1}, It's your pick!" %>: <%= "remaing budget: $#{@team_1.budget} " %><br /><br />
-
-
-<% @unpicked_players.each do |player| %>
-   <%= player.name %>, <%= player.price %><%= button_to "Draft Player", '/teams/teams_2', method: :get %> <br />
-<% end %>
