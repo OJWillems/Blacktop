@@ -15,3 +15,7 @@
 <% @unpicked_players.each do |player| %>
    <%= link_to "#{player.name} | #{player.position} | $#{player.price}", player %><br />
 <% end %>
+
+<% if flash[:budget_error] %>
+  <%= button_to "Restart Game", new_game_path, method: :get %>
+<% end %>

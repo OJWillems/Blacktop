@@ -22,7 +22,7 @@
 <ol>
 <% @players.each do |player| %>
   <% if player.team_id == @team_1.id %>
-      <li><%= player.name %></li>
+      <li><%= player.name %> | Points: <%= player.points %></li>
     <% end %>
 <% end %>
 </ol>
@@ -32,7 +32,7 @@
 <ol>
 <% @players.each do |player| %>
   <% if player.team_id == @team_2.id %>
-      <li><%= player.name %></li>
+      <li><%= player.name %> | Points: <%= player.points %> </li>
     <% end %>
 <% end %>
 </ol><br /><br />
