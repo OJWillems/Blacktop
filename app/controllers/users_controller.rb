@@ -18,10 +18,10 @@ class UsersController < ApplicationController
     @user_1 = User.create(name_1: params[:user][:name_1], wins: 0, losses: 0, smack_talk_1: params[:user][:smack_talk_1], budget: 600)
     @user_2 = User.create(name_2: params[:user][:name_2], wins: 0, losses: 0, smack_talk_2: params[:user][:smack_talk_2], budget: 600)
 
-    @team_1 = Team.create(user_id: @user_1.id, game_id: 1)
-    @team_2 = Team.create(user_id: @user_2.id, game_id: 1)
+    @team_1 = Team.create(team_name: @user_1.name_1, user_id: @user_1.id, game_id: 1)
+    @team_2 = Team.create(team_name: @user_2.name_2, user_id: @user_2.id, game_id: 1)
     #test to see what this redirects to
-    redirect_to new_team_path
+    redirect_to '/players/team_1'
   end
 
   def edit

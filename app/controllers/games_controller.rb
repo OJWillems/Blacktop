@@ -17,6 +17,11 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(home_score: 0, away_score: 0, quarter_updates: "")
+    @players = Player.all
+    @players.each do |player|
+      player.update(team_id: 3)
+    end
+    User.destroy_all
     redirect_to new_user_path
   end
 

@@ -1,0 +1,12 @@
+<h1>Welcome Bitchez</h1>
+<%= "#{@team_2.name_2}, It's your pick!" %>: <%= "remaing budget: #{@team_2.budget} " %><br /><br />
+
+<%= form_for @player, url: {action: 'update_player_2'}, html: {method: "patch"} do |f| %>
+  <%= collection_select(:player, :name, @unpicked_players, :id, :name) %>
+  <%= collection_select(:player, :team_id, @team, :id, :team_name) %>
+  <%= f.submit "Draft Player" %>
+<% end %><br />
+
+<% @unpicked_players.each do |player| %>
+   <%= link_to "#{player.name}, $#{player.price}", new_team_path %><br />
+<% end %>
