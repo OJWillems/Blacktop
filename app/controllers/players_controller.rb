@@ -38,27 +38,45 @@ class PlayersController < ApplicationController
 
   def update_player
     @player = Player.find_by(id: params[:player][:name])
-    @player.update(team_id: params[:player][:team_id])
-    redirect_to '/players/team_2'
+    @player_price = @player.price
+    @team_1_user = Team.all[-2].user
+    @team_1_current_budget = Team.all[-2].user.budget
+    if @team_1_current_budget >= @player_price
+      @team_1_updated_budget = @team_1_current_budget - @player_price
+      @player.update(team_id: params[:player][:team_id])
+      @team_1_user.update(budget: @team_1_updated_budget)
+      redirect_to '/players/team_2'
+    else
+      flash[:budget_error] = "You don't have the budget to draft this player"
+      redirect_to '/players/team_1'
+    end
   end
 
   def update_player_2
     @player = Player.find_by(id: params[:player][:name])
-    @player.update(team_id: params[:player][:team_id])
+    @player_price = @player.price
+    @team_2_user = Team.all[-1].user
+    @team_2_current_budget = Team.all[-1].user.budget
     @players = Player.all
     @team = Team.all[-1]
     count = 0
-
-    @players.each do |player|
-      if player.team_id == @team.id
-        count += 1
+    if @team_2_current_budget >= @player_price
+      @team_2_updated_budget = @team_2_current_budget - @player_price
+      @player.update(team_id: params[:player][:team_id])
+      @team_2_user.update(budget: @team_2_updated_budget)
+      @players.each do |player|
+        if player.team_id == @team.id
+          count += 1
+        end
       end
-    end
-  
-    if count < 5
-      redirect_to '/players/team_1'
+      if count < 5
+        redirect_to '/players/team_1'
+      else
+        redirect_to teams_path
+      end
     else
-      redirect_to teams_path
+      flash[:budget_error] = "You don't have the budget to draft this player"
+      redirect_to '/players/team_2'
     end
   end
 

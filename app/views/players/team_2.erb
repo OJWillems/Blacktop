@@ -1,5 +1,10 @@
 <h1>Welcome Bitchez</h1>
+
 <%= "#{@team_2.name_2}, It's your pick!" %>: <%= "remaing budget: #{@team_2.budget} " %><br /><br />
+
+<% if flash[:budget_error] %>
+  <%= flash[:budget_error] %>
+<% end %><br /><br />
 
 <%= form_for @player, url: {action: 'update_player_2'}, html: {method: "patch"} do |f| %>
   <%= collection_select(:player, :name, @unpicked_players, :id, :name) %>
