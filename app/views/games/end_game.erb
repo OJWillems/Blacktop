@@ -1,0 +1,13 @@
+<h1>That's the end of the game!</h1>
+
+<h2>The final score:</h2>
+<h3><%= @team_1.team_name %>'s Score: <%= @game.home_score %></h3>
+<h3><%= @team_2.team_name %>'s Score: <%= @game.away_score %></h3>
+
+<% if @game.home_score > @game.away_score %>
+  <%= @team_1.team_name %> Wins! We crown you, reigning Flomnbaum at Flatiron.
+<% else %>
+  <%= @team_2.team_name %> Wins! We crown you, reigning Flomnbaum at Flatiron.
+<% end %>
+
+<%= button_to "Want to play again?", new_game_path, method: :get %>
