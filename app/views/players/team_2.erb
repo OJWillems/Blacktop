@@ -15,3 +15,504 @@
 <% @unpicked_players.each do |player| %>
    <%= link_to "#{player.name} | #{player.position} | $#{player.price}", player %><br />
 <% end %>
+
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/aGo0gzP.png">
+    </div>
+    <div class="content">
+      <div class="header">LeBron James</div>
+      <div class="meta">
+        <a>Los Angeles Lakers</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[0].position %><br />
+        <b>Overall Rating:</b> <%= @players[0].overall_rating %><br />
+        <b>Price:</b> $<%= @players[0].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/ecaR63V.png">
+    </div>
+    <div class="content">
+      <div class="header">Kevin Durant</div>
+      <div class="meta">
+        <span class="date">Golden State Warriors</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[1].position %><br />
+        <b>Overall Rating:</b> <%= @players[1].overall_rating %><br />
+        <b>Price:</b> $<%= @players[1].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/VVfzHyW.png">
+    </div>
+    <div class="content">
+      <div class="header">James Harden</div>
+      <div class="meta">
+        <a>Houston Rockets</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[2].position %><br />
+        <b>Overall Rating:</b> <%= @players[2].overall_rating %><br />
+        <b>Price:</b> $<%= @players[2].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/gPczFWS.png">
+    </div>
+    <div class="content">
+      <div class="header">Steph Curry</div>
+      <div class="meta">
+        <a>Golden State Warriors</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[3].position %><br />
+        <b>Overall Rating:</b> <%= @players[3].overall_rating %><br />
+        <b>Price:</b> $<%= @players[3].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/X0WdUZi.png">
+    </div>
+    <div class="content">
+      <div class="header">Anthony Davis</div>
+      <div class="meta">
+        <span class="date">New Orleans Pelicans</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[4].position %><br />
+        <b>Overall Rating:</b> <%= @players[4].overall_rating %><br />
+        <b>Price:</b> $<%= @players[4].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/HtmETWA.png">
+    </div>
+    <div class="content">
+      <div class="header">Giannis Antetokounmpo</div>
+      <div class="meta">
+        <a>Milwaukee Bucks</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[5].position %><br />
+        <b>Overall Rating:</b> <%= @players[5].overall_rating %><br />
+        <b>Price:</b> $<%= @players[5].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/K80r544.png">
+    </div>
+    <div class="content">
+      <div class="header">Kawhi Leonard</div>
+      <div class="meta">
+        <a>Toronto Raptors</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[6].position %><br />
+        <b>Overall Rating:</b> <%= @players[6].overall_rating %><br />
+        <b>Price:</b> $<%= @players[6].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/HrAfvLv.png">
+    </div>
+    <div class="content">
+      <div class="header">Russel Westrbook</div>
+      <div class="meta">
+        <span class="date">Oklahoma City Thunder</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[7].position %><br />
+        <b>Overall Rating:</b> <%= @players[7].overall_rating %><br />
+        <b>Price:</b> $<%= @players[7].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/x80L4x4.png">
+    </div>
+    <div class="content">
+      <div class="header">Kyrie Irving</div>
+      <div class="meta">
+        <a>Boston Celtics</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[8].position %><br />
+        <b>Overall Rating:</b> <%= @players[8].overall_rating %><br />
+        <b>Price:</b> $<%= @players[8].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/F4M0JFi.png">
+    </div>
+    <div class="content">
+      <div class="header">Karl-Anthony Towns</div>
+      <div class="meta">
+        <a>Minnesota Timberwolves</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[9].position %><br />
+        <b>Overall Rating:</b> <%= @players[9].overall_rating %><br />
+        <b>Price:</b> $<%= @players[9].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/AH0rXlN.png">
+    </div>
+    <div class="content">
+      <div class="header">Chris Paul</div>
+      <div class="meta">
+        <span class="date">Houston Rockets</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[10].position %><br />
+        <b>Overall Rating:</b> <%= @players[10].overall_rating %><br />
+        <b>Price:</b> $<%= @players[10].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/bcXX46S.png">
+    </div>
+    <div class="content">
+      <div class="header">Damian Lillard</div>
+      <div class="meta">
+        <a>Portland Trail Blazers</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[11].position %><br />
+        <b>Overall Rating:</b> <%= @players[11].overall_rating %><br />
+        <b>Price:</b> $<%= @players[11].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/LTUmxPi.png">
+    </div>
+    <div class="content">
+      <div class="header">Demarcus Cousins</div>
+      <div class="meta">
+        <a>Golden State Warriors</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[12].position %><br />
+        <b>Overall Rating:</b> <%= @players[12].overall_rating %><br />
+        <b>Price:</b> $<%= @players[12].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/FT9MVz7.png">
+    </div>
+    <div class="content">
+      <div class="header">Joel Embiid</div>
+      <div class="meta">
+        <span class="date">Philadelphia 76ers</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[13].position %><br />
+        <b>Overall Rating:</b> <%= @players[13].overall_rating %><br />
+        <b>Price:</b> $<%= @players[13].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/vScOCWZ.png">
+    </div>
+    <div class="content">
+      <div class="header">DeMar DeRozen</div>
+      <div class="meta">
+        <a>San Antonio Spurs</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[14].position %><br />
+        <b>Overall Rating:</b> <%= @players[14].overall_rating %><br />
+        <b>Price:</b> $<%= @players[14].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/lNuoEOD.png">
+    </div>
+    <div class="content">
+      <div class="header">Jimmy Butler</div>
+      <div class="meta">
+        <a>Minnesota Timberwolves</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[15].position %><br />
+        <b>Overall Rating:</b> <%= @players[15].overall_rating %><br />
+        <b>Price:</b> $<%= @players[15].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/bmJa1aC.png">
+    </div>
+    <div class="content">
+      <div class="header">John Wall</div>
+      <div class="meta">
+        <span class="date">Washington Wizards</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[16].position %><br />
+        <b>Overall Rating:</b> <%= @players[16].overall_rating %><br />
+        <b>Price:</b> $<%= @players[16].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/MMbk0r5.png">
+    </div>
+    <div class="content">
+      <div class="header">Nikola Jokic</div>
+      <div class="meta">
+        <a>Denver Nuggets</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[17].position %><br />
+        <b>Overall Rating:</b> <%= @players[17].overall_rating %><br />
+        <b>Price:</b> $<%= @players[17].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/C8y8TvN.png">
+    </div>
+    <div class="content">
+      <div class="header">Paul George</div>
+      <div class="meta">
+        <a>Oklahoma City Thunder</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[18].position %><br />
+        <b>Overall Rating:</b> <%= @players[18].overall_rating %><br />
+        <b>Price:</b> $<%= @players[18].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/mhJuGi1.png">
+    </div>
+    <div class="content">
+      <div class="header">Klay Thompson</div>
+      <div class="meta">
+        <span class="date">Golden State Warriors</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[19].position %><br />
+        <b>Overall Rating:</b> <%= @players[19].overall_rating %><br />
+        <b>Price:</b> $<%= @players[19].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/k5vUwlN.png">
+    </div>
+    <div class="content">
+      <div class="header">Gordon Hayward</div>
+      <div class="meta">
+        <a>Boston Celtics</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[20].position %><br />
+        <b>Overall Rating:</b> <%= @players[20].overall_rating %><br />
+        <b>Price:</b> $<%= @players[20].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/y88LfI5.png">
+    </div>
+    <div class="content">
+      <div class="header">Kristaps Porzingis</div>
+      <div class="meta">
+        <a>New York Knicks</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[21].position %><br />
+        <b>Overall Rating:</b> <%= @players[21].overall_rating %><br />
+        <b>Price:</b> $<%= @players[21].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/RDdGjpd.png">
+    </div>
+    <div class="content">
+      <div class="header">LaMarcus Aldridge</div>
+      <div class="meta">
+        <span class="date">San Antonio Spurs</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[22].position %><br />
+        <b>Overall Rating:</b> <%= @players[22].overall_rating %><br />
+        <b>Price:</b> $<%= @players[22].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/Efd5ltb.png">
+    </div>
+    <div class="content">
+      <div class="header">Victor Oladipo</div>
+      <div class="meta">
+        <a>Indiana Pacers</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[23].position %><br />
+        <b>Overall Rating:</b> <%= @players[23].overall_rating %><br />
+        <b>Price:</b> $<%= @players[23].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/S1KEfcW.png">
+    </div>
+    <div class="content">
+      <div class="header">Andre Drummond</div>
+      <div class="meta">
+        <a>Detroit Pistons</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[24].position %><br />
+        <b>Overall Rating:</b> <%= @players[24].overall_rating %><br />
+        <b>Price:</b> $<%= @players[24].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/B4uzLz6.png">
+    </div>
+    <div class="content">
+      <div class="header">Ben Simmons</div>
+      <div class="meta">
+        <span class="date">Philadeplphia 76ers</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[25].position %><br />
+        <b>Overall Rating:</b> <%= @players[25].overall_rating %><br />
+        <b>Price:</b> $<%= @players[25].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/XZwZqjA.png">
+    </div>
+    <div class="content">
+      <div class="header">Bradley Beal</div>
+      <div class="meta">
+        <a>Washington Wizards</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[26].position %><br />
+        <b>Overall Rating:</b> <%= @players[26].overall_rating %><br />
+        <b>Price:</b> $<%= @players[26].price %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/unheRTk.png">
+    </div>
+    <div class="content">
+      <div class="header">C.J. McCollum</div>
+      <div class="meta">
+        <a>Portland Trail Blazers</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[27].position %><br />
+        <b>Overall Rating:</b> <%= @players[27].overall_rating %><br />
+        <b>Price:</b> $<%= @players[27].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/Egzqfkl.png">
+    </div>
+    <div class="content">
+      <div class="header">Devin Booker</div>
+      <div class="meta">
+        <span class="date">Pheoniz Suns</span>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[28].position %><br />
+        <b>Overall Rating:</b> <%= @players[28].overall_rating %><br />
+        <b>Price:</b> $<%= @players[28].price %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="https://i.imgur.com/DxkVvOJ.png">
+    </div>
+    <div class="content">
+      <div class="header">Donovan Mitchell</div>
+      <div class="meta">
+        <a>Utah Jazz</a>
+      </div>
+      <div class="description">
+        <b>Position:</b> <%= @players[29].position %><br />
+        <b>Overall Rating:</b> <%= @players[29].overall_rating %><br />
+        <b>Price:</b> $<%= @players[29].price %>
+      </div>
+    </div>
+  </div>
+</div>
