@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/players/team_1', to: 'players#team_1'
   get '/players/team_2', to: 'players#team_2'
   get '/games/update_game', to: 'games#update_game'
+  get '/games/end_game', to: 'games#end_game'
   patch '/games', to: 'players#update_player', as: 'update_game'
   patch '/players_path', to: 'players#update_player_2'
   resources :teams, only: [:index, :new, :create]

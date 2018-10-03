@@ -45,6 +45,12 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  def end_game
+    @game = Game.all[-1]
+    @team_1 = Team.all[-2]
+    @team_2 = Team.all[-1]
+  end
+
   private
 
   def game_params
