@@ -1,25 +1,28 @@
-<h1>Welcome to Flatiron Arena, Sponsorsed By: Jim's Beef Jerkey </h1>
+<div class="header">
+  <h1>Welcome to Flatiron Arena, Sponsorsed By: Jim's Beef Jerkey </h1>
+</div>
 
 <% @game.period_counter %>
-<h2><%= @team_1.team_name %>'s Score: <%= @game.home_score %></h2>
-<h2><%= @team_2.team_name %>'s Score: <%= @game.away_score %></h2>
+<!-- <h2><%= @team_1.team_name %>'s Score: <%= @game.home_score %></h2>
+<h2><%= @team_2.team_name %>'s Score: <%= @game.away_score %></h2> -->
 
-<% if @game.period_counter == 4 %>
-  That's the end of the first quarter folks!
-<% elsif @game.period_counter == 8 %>
-  That's the end of the second quarter folks!
-<% elsif @game.period_counter == 12 %>
-  That's the end of the third quarter folks!
-<% elsif @game.period_counter == 16 %>
-  That's the end of the game folks!
-<% else %>
-  Last Play Update: <%= @game.game_updates %>
-<% end %><br /><br />
+<div class="period">
+  <% if @game.period_counter == 4 %>
+    That's the end of the first quarter folks!
+  <% elsif @game.period_counter == 8 %>
+    That's the end of the second quarter folks!
+  <% elsif @game.period_counter == 12 %>
+    That's the end of the third quarter folks!
+  <% elsif @game.period_counter == 16 %>
+    That's the end of the game folks!
+  <% else %>
+    Last Play Update: <%= @game.game_updates %>
+  <% end %><br /><br />
+</div>
 
+<!-- <h3><%= @team_1.team_name %>'s Lineup:</h3> -->
 
-<h3><%= @team_1.team_name %>'s Lineup:</h3>
-
-<ol>
+<!-- <ol>
 <% @players.each do |player| %>
   <% if player.team_id == @team_1.id %>
       <li><%= player.name %> | Points: <%= player.points %></li>
@@ -35,8 +38,8 @@
       <li><%= player.name %> | Points: <%= player.points %> </li>
     <% end %>
 <% end %>
-</ol><br /><br />
-
+</ol><br /><br /> -->
+<!--
 <% if @game.period_counter == 4 %>
   <%= button_to "Let's start the second quarter", '/games/update_game', method: :get %>
 <% elsif @game.period_counter == 8 %>
@@ -47,4 +50,88 @@
   <%= button_to "Let's check out the end of the game stats", '/games/end_game', method: :get %>
 <% else %>
   <%= button_to "Sim until next play update", '/games/update_game', method: :get %>
-<% end %>
+<% end %> -->
+
+<div class="scores">
+  <div class="ui card">
+    <div class="content">
+      <div class="center aligned header"><%= @team_1.team_name %></div>
+      <div class="center aligned description">
+        <h1><%= @game.home_score %></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui card">
+    <div class="content">
+      <div class="center aligned header"><%= @team_2.team_name %></div>
+      <div class="center aligned description">
+        <h1><%= @game.away_score %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="start_button">
+  <% if @game.period_counter == 4 %>
+    <%= button_to "Let's start the second quarter", '/games/update_game', method: :get, class: "ui orange button" %>
+  <% elsif @game.period_counter == 8 %>
+    <%= button_to "Let's start the third quarter", '/games/update_game', method: :get, class: "ui orange button" %>
+  <% elsif @game.period_counter == 12 %>
+    <%= button_to "Let's start the fourth quarter", '/games/update_game', method: :get, class: "ui orange button" %>
+  <% elsif @game.period_counter == 16 %>
+    <%= button_to "Let's check out the end of the game stats", '/games/end_game', method: :get, class: "ui orange button" %>
+  <% else %>
+    <%= button_to "Sim until next play update", '/games/update_game', method: :get, class: "ui orange button" %>
+  <% end %>
+</div>
+
+<div class="floor">
+  <img src="https://i.imgur.com/atDQyuM.png" />
+</div>
+
+<div class="teams">
+  <div class="team_1">
+    <% @players.each do |player| %>
+      <% if player.team_id == @team_1.id %>
+      <div class="ui card">
+        <div class="image">
+          <img src=" <%= player.player_image %>">
+        </div>
+        <div class="content">
+          <a class="header"> <%= player.name %></a>
+          <div class="meta">
+            <span class="date"> <%= player.player_team %></span>
+          </div>
+          <div class="description">
+            <b>Position:</b> <%= player.position %><br />
+            <b>Points:</b>  <%= player.points %><br />
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="team_2">
+    <% @players.each do |player| %>
+      <% if player.team_id == @team_2.id %>
+      <div class="ui card">
+        <div class="image">
+          <img src=" <%= player.player_image %>">
+        </div>
+        <div class="content">
+          <a class="header"> <%= player.name %></a>
+          <div class="meta">
+            <span class="date"> <%= player.player_team %></span>
+          </div>
+          <div class="description">
+            <b>Position:</b> <%= player.position %><br />
+            <b>Points:</b>  <%= player.points %><br />
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

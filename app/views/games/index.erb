@@ -1,28 +1,75 @@
-<h1>Let the Game begin!</h1>
-
-Home Score: <%= @game.home_score %><br /><br />
-Away Score: <%= @game.away_score %><br /><br />
-Last Play Update: <%= @game.game_updates %><br /><br />
 
 
-<%= @team_1.team_name %>:
+<div class="scores">
+  <div class="ui card">
+    <div class="content">
+      <div class="center aligned header"><%= @team_1.team_name %></div>
+      <div class="center aligned description">
+        <h1><%= @game.home_score %></h1>
+      </div>
+    </div>
+  </div>
 
-<ol>
-<% @players.each do |player| %>
-  <% if player.team_id == @team_1.id %>
-      <li><%= player.name %> | Points: <%= player.points %></li>
+  <div class="ui card">
+    <div class="content">
+      <div class="center aligned header"><%= @team_2.team_name %></div>
+      <div class="center aligned description">
+        <h1><%= @game.away_score %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="start_button">
+  <%= button_to "Sim until first game update", '/games/update_game', method: :get, class: "ui orange button"%>
+</div>
+
+<div class="floor">
+  <img src="https://i.imgur.com/atDQyuM.png" />
+</div>
+
+<div class="teams">
+  <div class="team_1">
+    <% @players.each do |player| %>
+      <% if player.team_id == @team_1.id %>
+      <div class="ui card">
+        <div class="image">
+          <img src=" <%= player.player_image %>">
+        </div>
+        <div class="content">
+          <a class="header"> <%= player.name %></a>
+          <div class="meta">
+            <span class="date"> <%= player.player_team %></span>
+          </div>
+          <div class="description">
+            <b>Position:</b> <%= player.position %><br />
+            <b>Points:</b>  <%= player.points %><br />
+          </div>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-<% end %>
-</ol>
+  </div>
 
-<%= @team_2.team_name %>:
-
-<ol>
-<% @players.each do |player| %>
-  <% if player.team_id == @team_2.id %>
-      <li><%= player.name %> | Points: <%= player.points %></li>
+  <div class="team_2">
+    <% @players.each do |player| %>
+      <% if player.team_id == @team_2.id %>
+      <div class="ui card">
+        <div class="image">
+          <img src=" <%= player.player_image %>">
+        </div>
+        <div class="content">
+          <a class="header"> <%= player.name %></a>
+          <div class="meta">
+            <span class="date"> <%= player.player_team %></span>
+          </div>
+          <div class="description">
+            <b>Position:</b> <%= player.position %><br />
+            <b>Points:</b>  <%= player.points %><br />
+          </div>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-<% end %>
-</ol>
-
-<%= button_to "Sim until first game update", '/games/update_game', method: :get %>
+  </div>
+</div>

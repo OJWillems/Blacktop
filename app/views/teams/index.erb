@@ -1,23 +1,79 @@
-<h1>Hey this is your team page</h1>
 
-<%= @team_1.team_name %>:
 
-<ol>
-<% @players.each do |player| %>
-  <% if player.team_id == @team_1.id %>
-      <li><%= player.name %></li>
+<div class="scores">
+  <div class="ui card">
+    <div class="content">
+      <div class="center aligned header"><%= @team_1.team_name %></div>
+      <div class="center aligned description">
+        <h1>0</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui card">
+    <div class="content">
+      <div class="center aligned header"><%= @team_2.team_name %></div>
+      <div class="center aligned description">
+        <h1>0</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="start_button">
+  <%= button_to "Click to start the game!", '/games', method: :get, class: "ui orange button" %>
+</div>
+
+<div class="floor">
+  <img src="https://i.imgur.com/atDQyuM.png" />
+</div>
+
+<div class="teams">
+  <div class="team_1">
+    <% @players.each do |player| %>
+      <% if player.team_id == @team_1.id %>
+      <div class="ui card">
+        <div class="image">
+          <img src=" <%= player.player_image %>">
+        </div>
+        <div class="content">
+          <a class="header"> <%= player.name %></a>
+          <div class="meta">
+            <span class="date"> <%= player.player_team %></span>
+          </div>
+          <div class="description">
+            <b>Position:</b> <%= player.position %><br />
+            <b>Overall Rating:</b> <%= player.overall_rating %><br />
+            <b>Price:</b> $<%= player.price %>
+          </div>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-<% end %>
-</ol>
+  </div>
 
-<%= @team_2.team_name %>:
-
-<ol>
-<% @players.each do |player| %>
-  <% if player.team_id == @team_2.id %>
-      <li><%= player.name %></li>
+  <div class="team_2">
+    <% @players.each do |player| %>
+      <% if player.team_id == @team_2.id %>
+      <div class="ui card">
+        <div class="image">
+          <img src=" <%= player.player_image %>">
+        </div>
+        <div class="content">
+          <a class="header"> <%= player.name %></a>
+          <div class="meta">
+            <span class="date"> <%= player.player_team %></span>
+          </div>
+          <div class="description">
+            <b>Position:</b> <%= player.position %><br />
+            <b>Overall Rating:</b> <%= player.overall_rating %><br />
+            <b>Price:</b> $<%= player.price %>
+          </div>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-<% end %>
-</ol>
+  </div>
+</div>
 
-<%= button_to "Click to start the game!", '/games', method: :get  %>
+<!-- <img class="smoke" src="https://i.imgur.com/xgCJ8gD.png" /> -->
