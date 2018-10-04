@@ -1,30 +1,24 @@
 <%= form_for(@user) do |f|%>
-<div class="image">
   <div class="user_forms">
     <div class="user_1">
-      <%= f.label :player_1_team_name %>
-      <%= f.text_field :name_1 %><br /><br />
-      <%= f.label :smack_talk %>
-      <%= f.text_area :smack_talk_1 %><br /><br />
+      <%= f.label :player_1, class: "form_labels" %>
+      <%= f.text_field :name_1, class: "box" %><br /><br />
+      <%= f.label :smack_talk, class: "form_labels" %>
+      <%= f.text_area :smack_talk_1, class:"box" %><br /><br />
     </div>
 
-     <div class="versus">
-       Vs.
-     </div>
-
     <div class="user_2">
-      <%= f.label :player_2_team_name %>
-      <%= f.text_field :name_2 %><br /><br />
-      <%= f.label :smack_talk %>
-      <%= f.text_area :smack_talk_2 %><br /><br />
+      <%= f.label :player_2, class: "form_labels" %>
+      <%= f.text_field :name_2, class:"box" %><br /><br />
+      <%= f.label :smack_talk, class: "form_labels" %>
+      <%= f.text_area :smack_talk_2, class:"box" %><br /><br />
     </div>
 
   </div>
 
   <div class="create_users">
-    <%= f.submit "Create Users" %>
+    <%= f.submit "Let's Draft!", class: "huge ui orange button" %>
   </div>
   <!-- <img src="https://i.imgur.com/hPA8DPx.png"> -->
-</div>
 
 <% end %>

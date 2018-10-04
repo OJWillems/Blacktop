@@ -50,6 +50,22 @@ THIS IS THE CSS FOR THE FIRST PAGE
   padding-top: 40px;
 }
 
+.draft_welcome h1 {
+  position: absolute;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20pt;
+  color: black;
+}
+
+.draft_welcome_2 h1 {
+  position: absolute;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20pt;
+  color: black;
+  padding-bottom: 50px;
+  z-index: -1;
+}
+
  .curry {
 
     position: absolute;
@@ -72,7 +88,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
 
    position: absolute;
    bottom: -60px;
-   width: 140%;
+   width: 100%;
    z-index: -1;
 
 }
@@ -93,6 +109,66 @@ THIS IS THE CSS FOR THE FIRST PAGE
    margin-top: 1em;
  }
 
+ .additional {
+   height: 160px;
+   width: 50px;
+ }
+
+ .applebox {
+  margin: 30px !important;
+  width: 100px;
+  height: 85px;
+  box-sizing: border-box;
+  background: #f5f5f5;
+  padding: 20px 20px 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.applebox h1 {
+  font-size: 35pt
+}
+
+.apple {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.score {
+ margin: 30px !important;
+ width: 110px;
+ height: 85px;
+ box-sizing: border-box;
+ background: #f5f5f5;
+ padding: 10px 10px 10px;
+ margin: 10px 0 20px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ -webkit-border-radius: 4px;
+ -moz-border-radius: 4px;
+ -o-border-radius: 4px;
+ -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+ -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+ box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.score h1 {
+ font-size: 35pt
+}
+
+.scoreboard {
+ display: flex;
+ justify-content: center;
+}
+
  div.players_list {
    padding-left: 100px;
    padding-right: 100px;
@@ -105,7 +181,20 @@ THIS IS THE CSS FOR THE FIRST PAGE
    padding-top: 20px;
  }
 
+ .draft_form_2 {
+   display: flex;
+   justify-content: center;
+   padding-bottom: 20px;
+   padding-top: 50px;
+ }
+
  .draft_welcome {
+   display: flex;
+   justify-content: center;
+   padding-top: 30px;
+ }
+
+ .draft_welcome_2 {
    display: flex;
    justify-content: center;
    padding-top: 30px;
@@ -161,9 +250,8 @@ THIS IS THE CSS FOR THE FIRST PAGE
  }
 
  .period {
-   position: absolute;
-   top: 175px;
-   left: 43.5%;
+   display: flex;
+   justify-content: center;
  }
 
  .teams {
@@ -207,12 +295,14 @@ THIS IS THE CSS FOR THE FIRST PAGE
 
 .user_forms{
   display: flex;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+  margin-top: 250px
 }
 
 .user_1{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  margin-right: 600px
 }
 
 .user_2{
@@ -234,4 +324,50 @@ THIS IS THE CSS FOR THE FIRST PAGE
 .new_users_bg{
   background-image: url(https://i.imgur.com/hPA8DPx.png)
 
+}
+
+.kristaps img {
+  position: absolute;
+  top: 30px;
+  left: 28%;
+  height: 100%;
+  width: 40%;
+}
+
+.box {
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.box_2 {
+  box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   outline: none;
+   display: block;
+   width: 100%;
+   padding: 7px;
+   border: none;
+   border-bottom: 1px solid #ddd;
+   background: transparent;
+   margin-bottom: 10px;
+   font: 16px Arial, Helvetica, sans-serif;
+   height: 45px;
+}
+
+.form_labels {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20pt;
+  width: 300px
+}
+
+.create_users {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }

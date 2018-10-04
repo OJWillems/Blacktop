@@ -6,6 +6,18 @@
 <!-- <h2><%= @team_1.team_name %>'s Score: <%= @game.home_score %></h2>
 <h2><%= @team_2.team_name %>'s Score: <%= @game.away_score %></h2> -->
 
+<div class="scoreboard">
+  <div class="score">
+    <h1><%= @game.home_score %></h1>
+  </div>
+
+  <div class="score">
+    <h1><%= @game.away_score %></h1>
+  </div>
+</div>
+
+
+
 <div class="period">
   <% if @game.period_counter == 4 %>
     That's the end of the first quarter folks!
@@ -52,7 +64,7 @@
   <%= button_to "Sim until next play update", '/games/update_game', method: :get %>
 <% end %> -->
 
-<div class="scores">
+<!-- <div class="scores">
   <div class="ui card">
     <div class="content">
       <div class="center aligned header"><%= @team_1.team_name %></div>
@@ -70,7 +82,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> --> 
 
 <div class="start_button">
   <% if @game.period_counter == 4 %>

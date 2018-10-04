@@ -1,5 +1,5 @@
 <div class="draft_welcome">
-  <h3><%= "#{@team_1.name_1}, It's your pick!" %> | <%= "Remaing budget: $#{@team_1.budget} " %></h4><br /><br />
+  <h1><%= "#{@team_1.name_1}, it's your pick!" %> | <%= "Remaing budget: $#{@team_1.budget} " %></h1><br /><br />
 </div>
 
 <% if flash[:budget_error] %>
@@ -10,7 +10,7 @@
   <%= form_for @player, url: {action: 'update_player'}, html: {method: "patch"} do |f| %>
     <%= collection_select(:player, :name, @unpicked_players, :id, :name) %>
     <%= collection_select(:player, :team_id, @team, :id, :team_name) %>
-    <%= f.submit "Draft Player" %>
+    <%= f.submit "Draft Player", class: "ui orange button" %>
   <% end %><br />
 </div>
 

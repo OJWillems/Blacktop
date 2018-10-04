@@ -1,6 +1,5 @@
 
-
-<div class="scores">
+<!-- <div class="scores">
   <div class="ui card">
     <div class="content">
       <div class="center aligned header"><%= @team_1.team_name %></div>
@@ -8,9 +7,19 @@
         <h1><%= @game.home_score %></h1>
       </div>
     </div>
+  </div> -->
+
+  <div class="apple">
+    <div class="applebox">
+      <h1><%= @game.home_score %></h1>
+    </div>
+
+    <div class="applebox">
+      <h1><%= @game.away_score %></h1>
+    </div>
   </div>
 
-  <div class="ui card">
+  <!-- <div class="ui card">
     <div class="content">
       <div class="center aligned header"><%= @team_2.team_name %></div>
       <div class="center aligned description">
@@ -18,7 +27,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="start_button">
   <%= button_to "Sim until first game update", '/games/update_game', method: :get, class: "ui orange button"%>
