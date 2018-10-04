@@ -1,8 +1,70 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// 
+//
 // .game_start {
 //   display: flex;
 //   justify-content: center;
 // }
+
+.end_game_header{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight:bold;
+  font-size: 30pt
+}
+
+.end_scores{
+  display:flex;
+  justify-content: space-evenly;
+  color: white
+}
+
+.team_1_score{
+  font-size: 20pt;
+  font-weight: bold;
+  color: white;
+  padding-right: 145px
+}
+
+.team_2_score{
+  font-size: 20pt;
+  font-weight: bold;
+  color:white;
+  padding-left:145px
+}
+
+.end_game_bg{
+  background-image: url(https://i.imgur.com/kGV4lRQ.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.replay_button{
+  display: flex;
+  justify-content: center;
+  padding-top: 180px
+}
+
+.update_1{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 20pt;
+  padding-top:170px
+}
+
+.update_2{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 20pt;
+}
+
+.update_3{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 20pt;
+}

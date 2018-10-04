@@ -1,13 +1,43 @@
-<h1>That's the end of the game!</h1>
+<body class="end_game_bg">
+  <div class="end_game_header">
+    <span>That's Game!</span>
+  </div>
 
-<h2>The final score:</h2>
-<h3><%= @team_1.team_name %>'s Score: <%= @game.home_score %></h3>
-<h3><%= @team_2.team_name %>'s Score: <%= @game.away_score %></h3>
+  <br><br><br>
 
-<% if @game.home_score > @game.away_score %>
-  <%= @team_1.team_name %> Wins! We crown you, reigning Flomnbaum at Flatiron.
-<% else %>
-  <%= @team_2.team_name %> Wins! We crown you, reigning Flomnbaum at Flatiron.
-<% end %>
+  <!-- <h2>The final score:</h2> -->
+  <div class="end_scores">
+    <span class="team_1_score"><%= @team_1.team_name %>'s Score: <%= @game.home_score %></span>
+    <span class="team_2_score"><%= @team_2.team_name %>'s Score: <%= @game.away_score %></span>
+  </div>
 
-<%= button_to "Want to play again?", new_game_path, method: :get %>
+  <div class="end_update">
+    <% if @game.home_score > @game.away_score %>
+      <div class="update_1">
+        "<%= @team_1.team_name %> Wins! We crown you, reigning Flomnbaum."<br><br>
+      </div>
+      <div class="update_2">
+        "<%= @team_1.user.name_1 %>, what do you have to say to your opponent?" <br><br>
+      </div>
+      <div class="update_3">
+        "<%= @team_1.user.smack_talk_1 %>"
+      </div>
+    <% else %>
+      <div class="update_1">
+        "<%= @team_2.team_name %> Wins! We crown you, reigning Flomnbaum."<br><br>
+      </div>
+      <div class="update_2">
+        "<%= @team_2.user.name_2 %>, what do you have to say to your opponent?"<br><br>
+      </div>
+      <div class="update_3">
+        "<%= @team_2.user.smack_talk_2 %>"
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="replay_button">
+    <%= button_to "Want to play again?", new_game_path, method: :get, class: "huge ui inverted orange button" %>
+  </div>
+
+</body>
