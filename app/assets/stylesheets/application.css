@@ -120,7 +120,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
   height: 85px;
   box-sizing: border-box;
   background: #f5f5f5;
-  padding: 20px 20px 10px;
+  padding: 10px 10px 10px;
   margin: 10px 0 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -246,12 +246,29 @@ THIS IS THE CSS FOR THE FIRST PAGE
  .start_button {
    position: absolute;
    top: 30%;
-   left: 43.5%;
+   left: 43%;
+   padding-top: 20px;
  }
 
  .period {
    display: flex;
    justify-content: center;
+ }
+
+ .name {
+   margin-right: 200px;
+   margin-left: 200px;
+   margin-top: -90px;
+ }
+
+ .player_names {
+   display: flex;
+   justify-content: center;
+ }
+
+ .period h4 {
+   font-family: 'Noto Sans', sans-serif;
+   color: black;
  }
 
  .teams {
@@ -262,7 +279,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
  .floor img {
    position: absolute;
    top: 40%;
-   left: 30%;
+   left: 29.5%;
    height: 55%;
    width: 40%;
  }

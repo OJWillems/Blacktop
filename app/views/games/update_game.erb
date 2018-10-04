@@ -16,19 +16,29 @@
   </div>
 </div>
 
+<div class="player_names">
+  <div class="name">
+    <h1><%= @team_1.team_name %></h1>
+  </div>
+
+  <div class="name">
+    <h1><%= @team_2.team_name %></h1>
+  </div>
+</div>
+
 
 
 <div class="period">
   <% if @game.period_counter == 4 %>
-    That's the end of the first quarter folks!
+    <h4>That's the end of the first quarter folks!</h4>
   <% elsif @game.period_counter == 8 %>
-    That's the end of the second quarter folks!
+    <h4>That's the end of the second quarter folks!</h4>
   <% elsif @game.period_counter == 12 %>
-    That's the end of the third quarter folks!
+    <h4>That's the end of the third quarter folks!</h4>
   <% elsif @game.period_counter == 16 %>
-    That's the end of the game folks!
+    <h4>That's the end of the game folks!</h4>
   <% else %>
-    Last Play Update: <%= @game.game_updates %>
+    <h4>Last Play Update: <%= @game.game_updates %></h4>
   <% end %><br /><br />
 </div>
 
@@ -82,7 +92,7 @@
       </div>
     </div>
   </div>
-</div> --> 
+</div> -->
 
 <div class="start_button">
   <% if @game.period_counter == 4 %>

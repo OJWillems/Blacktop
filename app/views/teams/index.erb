@@ -29,6 +29,17 @@
   </div>
 </div>
 
+<div class="player_names">
+  <div class="name">
+    <h1><%= @team_1.team_name %></h1>
+  </div>
+
+  <div class="name">
+    <h1><%= @team_2.team_name %></h1>
+  </div>
+</div>
+
+
 
 <div class="start_button">
   <%= button_to "Click to start the game!", '/games', method: :get, class: "ui orange button" %>
