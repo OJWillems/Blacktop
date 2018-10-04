@@ -25,3 +25,27 @@
    justify-content: center;
    margin: 100px;
  }
+
+
+ div.card {
+   float: left;
+   padding-right: 30px;
+ }
+
+ div.players_list {
+   padding-left: 100px;
+   padding-right: 100px;
+ }
+
+ .draft_form {
+   display: flex;
+   justify-content: center;
+   padding-bottom: 20px;
+   padding-top: 20px;
+ }
+
+ .draft_welcome {
+   display: flex;
+   justify-content: center;
+   padding-top: 30px;
+ }
