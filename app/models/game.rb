@@ -16,7 +16,7 @@ class Game < ApplicationRecord
     #can adjust later if there is time
     @possesion = @teams.sample
 
-    13.times do
+    30.times do
 
     #sort players by overall rating
       @team_1_players = Team.all[-2].players.sort_by do |player|

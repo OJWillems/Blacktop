@@ -18,7 +18,7 @@ class GamesController < ApplicationController
     @team_2 = Team.all[-1]
     @game.game_sequence
     @current_period_count = @game.period_counter
-    @new_count = @current_period_count + 1
+    @new_count = @current_period_count + 2
     @game.update(period_counter: @new_count)
     @game_count = @game.period_counter
   end
