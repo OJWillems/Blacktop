@@ -1,9 +1,9 @@
 <div class="draft_welcome_2">
-  <h1><%= "#{@team_2.name_2}, it's your pick!" %> | <%= "Remaing budget: $#{@team_2.budget} " %></h1>
+  <h1><%= "#{@team_2.name_2}, it's your pick!" %> | <%= "Remaing budget: $#{@team_2.budget} " %></h1><br />
 </div>
 
 <% if flash[:budget_error] %>
-  <%= flash[:budget_error] %>
+  <%= flash[:budget_error] %><br>
 <% end %>
 
 <div class="draft_form_2 z">
@@ -21,7 +21,7 @@
         <img src=" <%= player.player_image %>">
       </div>
       <div class="content">
-        <a class="header"> <%= player.name %></a>
+        <a class="header"> <%= link_to player.name, player %></a>
         <div class="meta">
           <span class="date"> <%= player.player_team %></span>
         </div>

@@ -55,6 +55,8 @@ THIS IS THE CSS FOR THE FIRST PAGE
   font-family: 'Noto Sans', sans-serif;
   font-size: 20pt;
   color: black;
+  padding-bottom: 50px;
+  z-index: -1;
 }
 
 .draft_welcome_2 h1 {
@@ -178,7 +180,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
    display: flex;
    justify-content: center;
    padding-bottom: 20px;
-   padding-top: 20px;
+   padding-top: 50px;
  }
 
  .draft_form_2 {
