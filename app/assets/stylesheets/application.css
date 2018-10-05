@@ -28,6 +28,12 @@ THIS IS THE CSS FOR THE FIRST PAGE
    margin: 100px;
  }
 
+ .error {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+ }
+
  .welcome {
    display: flex;
    justify-content: center;
@@ -36,23 +42,22 @@ THIS IS THE CSS FOR THE FIRST PAGE
  }
 
 .welcome h1 {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Black Ops One', cursive;
   font-size: 30pt;
   color: black;
-  animation-direction: normal;
 }
 
 .welcome h2 {
   position: absolute;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 20pt;
+  font-family: 'Pacifico', cursive;
+  font-size: 30pt;
   color: black;
   padding-top: 40px;
 }
 
 .draft_welcome h1 {
   position: absolute;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Black Ops One', cursive;
   font-size: 20pt;
   color: black;
   padding-bottom: 50px;
@@ -61,7 +66,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
 
 .draft_welcome_2 h1 {
   position: absolute;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Black Ops One', cursive;
   font-size: 20pt;
   color: black;
   padding-bottom: 50px;
@@ -270,6 +275,8 @@ THIS IS THE CSS FOR THE FIRST PAGE
 
  .period h4 {
    font-family: 'Noto Sans', sans-serif;
+   font-weight: bold;
+   font-size: 14pt;
    color: black;
  }
 
@@ -299,6 +306,11 @@ THIS IS THE CSS FOR THE FIRST PAGE
  .flatiron h1{
    display: flex;
    justify-content: center;
+   font-family: 'Black Ops One', cursive;
+ }
+ .name h1{
+   font-family: 'Bangers', cursive;
+   font-size: 30pt;
  }
 
  /*

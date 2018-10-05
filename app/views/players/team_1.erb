@@ -2,9 +2,11 @@
   <h1><%= "#{@team_1.name_1}, it's your pick!" %> | <%= "Remaing budget: $#{@team_1.budget} " %></h1><br />
 </div>
 
-<% if flash[:budget_error] %>
-  <%= flash[:budget_error] %><br>
-<% end %>
+<div class="error">
+  <% if flash[:budget_error] %>
+    <%= flash[:budget_error] %><br>
+  <% end %>
+</div>
 
 <div class="draft_form">
   <%= form_for @player, url: {action: 'update_player'}, html: {method: "patch"} do |f| %>
