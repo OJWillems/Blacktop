@@ -8,7 +8,7 @@
   <% end %>
 </div>
 
-<div class="draft_form">
+<div class="draft_form z">
   <%= form_for @player, url: {action: 'update_player'}, html: {method: "patch"} do |f| %>
     <%= collection_select(:player, :name, @unpicked_players, :id, :name) %>
     <%= collection_select(:player, :team_id, @team, :id, :team_name) %>
@@ -23,7 +23,7 @@
         <img src=" <%= player.player_image %>">
       </div>
       <div class="content">
-        <a class="header"> <%= link_to player.name, player %></a>
+        <a class="header"> <%= player.name %></a>
         <div class="meta">
           <span class="date"> <%= player.player_team %></span>
         </div>
