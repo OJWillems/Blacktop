@@ -149,6 +149,34 @@ THIS IS THE CSS FOR THE FIRST PAGE
   padding-top: 50px;
 }
 
+.jimbox {
+ margin: 30px !important;
+ width: 100px;
+ height: 85px;
+ box-sizing: border-box;
+ background: #f5f5f5;
+ padding: 10px 10px 10px;
+ margin: 10px 0 20px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ -webkit-border-radius: 4px;
+ -moz-border-radius: 4px;
+ -o-border-radius: 4px;
+ -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+ -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+ box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.jimbox h1 {
+ font-size: 35pt
+}
+
+.jim {
+ display: flex;
+ justify-content: center;
+ padding-top: 15px;
+}
+
 .score {
  margin: 30px !important;
  width: 110px;
@@ -307,6 +335,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
    display: flex;
    justify-content: center;
    font-family: 'Black Ops One', cursive;
+   padding-top: 10px;
  }
  .name h1{
    font-family: 'Bangers', cursive;
@@ -392,7 +421,7 @@ THIS IS THE CSS FOR THE FIRST PAGE
 }
 
 .form_labels {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Black Ops One', cursive;
   font-size: 20pt;
   width: 300px
 }
