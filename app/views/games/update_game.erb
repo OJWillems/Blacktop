@@ -32,11 +32,11 @@
   <% if @game.period_counter == 4 %>
     <h4>That's the end of the first quarter folks!</h4>
   <% elsif @game.period_counter == 8 %>
-    <h4>That's the end of the second quarter folks!</h4>
+    <h4>That's a wrap on the second quarter!</h4>
   <% elsif @game.period_counter == 12 %>
-    <h4>That's the end of the third quarter folks!</h4>
+    <h4>That's the end of the third!</h4>
   <% elsif @game.period_counter == 16 %>
-    <h4>That's the end of the game folks!</h4>
+    <h4>And that's the game!</h4>
   <% else %>
     <h4>Last Play Update: <%= @game.game_updates %></h4>
   <% end %><br /><br />
@@ -102,7 +102,11 @@
   <% elsif @game.period_counter == 12 %>
     <%= button_to "Start the fourth quarter", '/games/update_game', method: :get, class: "ui orange button" %>
   <% elsif @game.period_counter == 16 %>
+<<<<<<< HEAD
     <%= button_to "Let's check out the end of the game stats", '/games/end_game', method: :get, class: "ui orange button" %>
+=======
+    <%= button_to "It's time to celebrate", '/games/end_game', method: :get, class: "ui orange button" %>
+>>>>>>> d4a3f90faf14a867eeb69794c3a30815b8caabe2
   <% else %>
     <%= button_to "Jump to next play update", '/games/update_game', method: :get, class: "ui orange button" %>
   <% end %>
