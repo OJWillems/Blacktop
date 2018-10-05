@@ -1,5 +1,5 @@
 <div class="flatiron">
-  <h1>Welcome to Flatiron Arena, Sponsored By: An Absurd Amount of Dum Dum's </h1>
+  <h1>Welcome to Flatiron Arena</h1>
 </div>
 
 <% @game.period_counter %>
@@ -102,11 +102,7 @@
   <% elsif @game.period_counter == 12 %>
     <%= button_to "Start the fourth quarter", '/games/update_game', method: :get, class: "ui orange button" %>
   <% elsif @game.period_counter == 16 %>
-<<<<<<< HEAD
-    <%= button_to "Let's check out the end of the game stats", '/games/end_game', method: :get, class: "ui orange button" %>
-=======
     <%= button_to "It's time to celebrate", '/games/end_game', method: :get, class: "ui orange button" %>
->>>>>>> d4a3f90faf14a867eeb69794c3a30815b8caabe2
   <% else %>
     <%= button_to "Jump to next play update", '/games/update_game', method: :get, class: "ui orange button" %>
   <% end %>
